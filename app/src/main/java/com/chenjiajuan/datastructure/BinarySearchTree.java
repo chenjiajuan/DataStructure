@@ -55,7 +55,27 @@ public class BinarySearchTree<AnyType extends Comparable< ? super AnyType>> {
     }
 
     public void printTree(){
+        if (isEmpey()){
+            System.out.println("Empty tree");
+        }else {
+            printTree(root);
+        }
+    }
 
+    public void printRoot(){
+        if (isEmpey()){
+            System.out.println("root is null");
+        }else {
+            System.out.println("root is "+root.element);
+        }
+    }
+
+    private void printTree(BinaryNode<AnyType> node){
+        if (node!=null){
+            printTree(node.leftNode);
+            System.out.print(node.element+",");
+            printTree(node.rightNode);
+        }
     }
 
     //TODO
@@ -104,15 +124,21 @@ public class BinarySearchTree<AnyType extends Comparable< ? super AnyType>> {
     public BinaryNode<AnyType> remove(AnyType x,BinaryNode<AnyType> t){
         if (t==null)
         return null;
+        if (x==null)
+            return null;
+        //目标值，与t先进行比较，
         int compareResult=x.compareTo(t.element);
         if (compareResult<0){
+            //如果比t小，则从左开始遍历
             t.leftNode=remove(x,t.leftNode);
         }else if (compareResult>0){
+            //如果比t大，则从右节点开始遍历
             t.rightNode=remove(x,t.rightNode);
         }else if (t.leftNode!=null&&t.rightNode!=null){
-            //若该节点有两个节点，则需要处理其子节点
-            //寻找其子节点中较小的一项，成为父节点。
+            //若该节点与t值相等，且有两个节点，则需要处理其子节点：
+            //1.寻找其右节点中最小的一个值作为该节点的值（二叉树右侧节点比其右侧子节点都要小，因此必须遍历最小值）
             t.element= (AnyType) finMin(t.rightNode).element;
+            //将其
             t.rightNode=remove(t.element,t.rightNode);
         }else {
             //若该节少于一个孩子节点，判断其左节点是否不为空，
