@@ -1,9 +1,9 @@
-package com.chenjiajuan.datastructure;
+package com.chenjiajuan.datastructure.binary;
 
 public class BinarySearchTest {
 
     public static void main(String [] args){
-        BinarySearchTree<String>binarySearchTree=new BinarySearchTree<String>();
+        BinarySearchTree<String> binarySearchTree=new BinarySearchTree<String>();
         binarySearchTree.insert("Aoe");
         binarySearchTree.insert("Tom");
         binarySearchTree.insert("Amy");

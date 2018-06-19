@@ -1,4 +1,4 @@
-package com.chenjiajuan.datastructure;
+package com.chenjiajuan.datastructure.binary;
 
 
 import java.nio.BufferUnderflowException;
