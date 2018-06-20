@@ -32,5 +32,8 @@ public class CompareTest {
         System.out.println(findMax(str1));
         System.out.println(findMin(str1));
 
+        BinarySearchTree binarySearchTree=new BinarySearchTree();
+
+
     }
 }
