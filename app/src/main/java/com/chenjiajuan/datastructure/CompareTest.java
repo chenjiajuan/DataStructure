@@ -1,6 +1,5 @@
 package com.chenjiajuan.datastructure;
 
-
 /**
  * Created by chenjiajuan on 2018/6/19.
  */
@@ -31,8 +30,6 @@ public class CompareTest {
         String [] str1={"Job","Bob","Bill","Zake"};
         System.out.println(findMax(str1));
         System.out.println(findMin(str1));
-
-        BinarySearchTree binarySearchTree=new BinarySearchTree();
 
 
     }
